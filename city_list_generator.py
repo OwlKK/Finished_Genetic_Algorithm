@@ -2,7 +2,7 @@ from city import City
 
 
 def readData():
-    my_file = open("berlin11_modified.tsp", "r")
+    my_file = open("berlin52.tsp", "r")
     data = my_file.read()
 
     # replacing end splitting the text

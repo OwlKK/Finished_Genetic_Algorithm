@@ -11,10 +11,14 @@ class Fitness:
             for i in range(0, len(self.route)):
                 fromCity = self.route[i]
                 toCity = None
+
                 if i + 1 < len(self.route):
                     toCity = self.route[i + 1]
+
+                # extra calculation so we come back to the starting city
                 else:
                     toCity = self.route[0]
+
                 pathDistance += fromCity.distance(toCity)
             self.distance = pathDistance
         return self.distance
