@@ -1,0 +1,33 @@
+data.iloc[0] # first row of data frame
+data.iloc[:,0] # first column of data frame
+
+distance_at_ij = round(matrix.iat[i, j], 3)
+
+set first row to 9999999
+under for <- matrix.iat[0, j] = 9999999
+
+set first column to 9999999
+under for <- matrix.iat[j, 0] = 9999999
+
+# under for <- matrix.iat[j, 1] = 9999999 - set second row to 9999999
+
+9 and down in main
+
+    # Random algorithm
+    random_algorithm(cityList=cityList)
+
+    # Greedy algorithm
+    find_min_route()
+
+    # BEST PARAMETERS I HAVE FOUND, DONT TOUCH
+    # !!! AND ESPECIALLY DONT TOUCH MUTATION RATE !!!
+    POPULATION = cityList
+    POPULATIONSIZE = 100
+    ELITESIZE = 25
+    MUTATIONRATE = 0.001
+    GENERATIONS = 100  # after everything set to 500
+
+    # Genetic + Random(initial distance)
+    finalDistance, bestRoute = geneticAlgorithmWithPlotting(population=POPULATION, populationSize=POPULATIONSIZE,
+                                                            eliteSize=ELITESIZE, mutationRate=MUTATIONRATE,
+                                                            generations=GENERATIONS)
