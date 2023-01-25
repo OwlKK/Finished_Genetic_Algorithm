@@ -2,7 +2,6 @@ import numpy as np
 import operator
 import pandas as pd
 import random
-from matplotlib import pyplot as plt
 
 from create_first_population import createFirstPopulation
 from fitness import Fitness

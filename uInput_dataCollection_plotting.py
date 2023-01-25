@@ -9,9 +9,6 @@ from create_genetic_algorithm import geneticAlgorithmWithPlotting
 from random_algorithm import random_algorithm
 
 
-# from random_algorithm import random_algorithm
-
-
 # Good luck reading this heh...
 def choose_file():
     which_file = int(input("Type a number corresponding to file: berlin52(1) or kroA100(2)?"))
@@ -44,6 +41,7 @@ def choice_and_action():
         print("'2' - Random")
         print("'3' - Greedy")
         print("'4' - All")
+        print("'5' - Genetic - Each run specified")
         print("'End me' - Close program")
 
         what_to_do = input("Please type a number corresponding to what You want to do \n")
@@ -54,8 +52,8 @@ def choice_and_action():
             print("Bye")
             break
 
-        # add multiple runs each specified by the user
-        elif int(what_to_do) == 1 or what_to_do == 4 or what_to_do == 5:
+        # added multiple runs each specified by the user
+        elif int(what_to_do) == 1 or int(what_to_do) == 4 or int(what_to_do) == 5:
             best_custom = int(input("Best parameters I have found (1) or custom (2), or "
                                     "custom each specified (3)? \n"))
             if best_custom == 1:
