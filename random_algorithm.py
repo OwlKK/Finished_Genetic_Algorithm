@@ -29,8 +29,9 @@ def random_algorithm(cityList):
 
     random_distance = routeDistance(route=random_route)
 
-    print('Random distance: ' + str(random_distance))
+    print('Random path: ')
+    print(random_route)
 
-    print('Random path: ' + str(random_route)  + "\n")
+    print('Random distance: ' + str(random_distance) + "\n")
 
     return random_distance, random_route

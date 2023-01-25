@@ -7,7 +7,7 @@ class City:
         self.x = x
         self.y = y
 
-# this is used absolutely nowhere
+# this is used absolutely fucking nowhere XDDDDDDDDD
     def distance(self, city):
         xDis = abs(self.x - city.x)
         yDis = abs(self.y - city.y)

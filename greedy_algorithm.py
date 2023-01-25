@@ -64,7 +64,7 @@ def find_min_route():
     visitedCitiesList.append(visitedCitiesList[0])
 
     print("Greedy distance: " + str(distances_sum))
-    print("Greedy path: " + str(visitedCitiesList) + "\n")
+    print("Greedy path: " + str(visitedCitiesList))
 
     greedy_distance = distances_sum
     greedy_route = visitedCitiesList

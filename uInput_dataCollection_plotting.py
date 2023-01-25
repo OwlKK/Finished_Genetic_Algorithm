@@ -9,6 +9,10 @@ from create_genetic_algorithm import geneticAlgorithmWithPlotting
 from random_algorithm import random_algorithm
 
 
+# from random_algorithm import random_algorithm
+
+
+# Good luck reading this heh...
 def choose_file():
     which_file = int(input("Type a number corresponding to file: berlin52(1) or kroA100(2)?"))
     if which_file == 1:
@@ -200,7 +204,6 @@ def choice_and_action():
 
 
 def create_graph(caa_variables):
-
     j = 0
     for i in caa_variables[14]:
         graph_distances = caa_variables[14][j]
@@ -253,6 +256,3 @@ def display_results_in_window(caa_variables):
     T.insert(tk.END, text_to_display)
 
     tk.mainloop()
-
-
-

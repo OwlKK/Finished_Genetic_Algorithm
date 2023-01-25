@@ -2,6 +2,7 @@ import numpy as np
 import operator
 import pandas as pd
 import random
+from matplotlib import pyplot as plt
 
 from create_first_population import createFirstPopulation
 from fitness import Fitness
@@ -146,13 +147,21 @@ def geneticAlgorithmWithPlotting(population, populationSize, eliteSize, mutation
 
     # Distance is an inversion of fitness
     final_distance = 1 / rankRoutes(pop)[0][1]
-    print("Genetic final distance: " + str(final_distance))
+    print("genetic final distance: " + str(final_distance) + "\n")
     bestRouteIndex = rankRoutes(pop)[0][0]
     bestRoute = pop[bestRouteIndex]
 
     # for congruity's sake
     genetic_distance = final_distance
     genetic_route = bestRoute
-    print("Genetic path: " + str(genetic_route) + "\n")
+    print(genetic_route)
+    print("\n")
+
+    # move progress to uInput
+    # print("YOU HAVE TO CLOSE THIS WINDOW TO CONTINUE")
+    # plt.plot(progress)
+    # plt.ylabel('Distance')
+    # plt.xlabel('Generation')
+    # plt.show()
 
     return genetic_distance, genetic_route, progress
