@@ -1,5 +1,6 @@
 # This can be optimized so much, TOO BAD!!!
 import statistics
+import pandas as pd
 import numpy as np
 import tkinter as tk
 from matplotlib import pyplot as plt
@@ -41,7 +42,6 @@ def choice_and_action():
         print("'2' - Random")
         print("'3' - Greedy")
         print("'4' - All")
-        print("'5' - Genetic - Each run specified")
         print("'End me' - Close program")
 
         what_to_do = input("Please type a number corresponding to what You want to do \n")
@@ -99,11 +99,12 @@ def choice_and_action():
                 print("Genetic " + str(run_x_times) + " times, cool\n")
 
                 for i in range(run_x_times):
-                    genetic_distance, bestRoute, progress = geneticAlgorithmWithPlotting(population=POPULATION,
-                                                                                         populationSize=POPULATIONSIZE,
-                                                                                         eliteSize=ELITESIZE,
-                                                                                         mutationRate=MUTATIONRATE,
-                                                                                         generations=GENERATIONS)
+                    genetic_distance, bestRoute, progress = geneticAlgorithmWithPlotting(
+                        population=POPULATION,
+                        populationSize=POPULATIONSIZE,
+                        eliteSize=ELITESIZE,
+                        mutationRate=MUTATIONRATE,
+                        generations=GENERATIONS)
 
                     genetic_results.append(genetic_distance)
                     progress_list.append(progress)
@@ -126,12 +127,12 @@ def choice_and_action():
                 for i in range(3):
                     for j in range(run_x_times):
                         if i == 0:
-                            genetic_distance, bestRoute, progress = geneticAlgorithmWithPlotting \
-                                (population=POPULATION,
-                                 populationSize=POPULATIONSIZE,
-                                 eliteSize=ELITESIZE,
-                                 mutationRate=MUTATIONRATE,
-                                 generations=GENERATIONS)
+                            genetic_distance, bestRoute, progress = geneticAlgorithmWithPlotting(
+                                population=POPULATION,
+                                populationSize=POPULATIONSIZE,
+                                eliteSize=ELITESIZE,
+                                mutationRate=MUTATIONRATE,
+                                generations=GENERATIONS)
 
                             genetic_results.append(float(genetic_distance))
                             progress_list.append(progress)
@@ -143,18 +144,6 @@ def choice_and_action():
                         if i == 2:
                             greedy_distance, greedy_route = greedy_algorithm.find_min_route()
                             greedy_results.append(float(greedy_distance))
-
-            case 5:
-                for i in range(run_x_times):
-                    genetic_distance, bestRoute, progress = geneticAlgorithmWithPlotting(
-                        population=POPULATION,
-                        populationSize=population_size_custom_specified[i],
-                        eliteSize=elite_size_custom_specified[i],
-                        mutationRate=mutation_custom_specified[i],
-                        generations=generations_custom_specified[i])
-
-                    genetic_results.append(genetic_distance)
-                    progress_list.append(progress)
 
         which_result_not_empty = []
 
@@ -201,19 +190,24 @@ def choice_and_action():
         return wrne_and_results
 
 
+def create_table(caa_variables):
+    pass
+
+
 def create_graph(caa_variables):
     j = 0
-    for i in caa_variables[14]:
-        graph_distances = caa_variables[14][j]
-        j = j + 1
+    if caa_variables[14] is not None:
+        for i in caa_variables[14]:
+            graph_distances = caa_variables[14][j]
+            j = j + 1
 
-        plt.plot(graph_distances, label="run" + str(j))
+            plt.plot(graph_distances, label="run" + str(j))
 
-        plt.title('Comparison of genetic algorithm runs')
-        plt.ylabel('Distance')
-        plt.xlabel('Generation')
-        plt.legend()
-    plt.show()
+            plt.title('Comparison of genetic algorithm runs')
+            plt.ylabel('Distance')
+            plt.xlabel('Generation')
+            plt.legend()
+        plt.show()
 
 
 def display_results_in_window(caa_variables):
